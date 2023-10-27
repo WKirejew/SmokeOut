@@ -8,11 +8,16 @@ and general mechanical engineer [Konrad Sejud](https://www.linkedin.com/in/konra
 ## Requirements:
 
 ### Accessing DataBase from Azure:
-pyodbc
-fastapi
-uvicorn[standard]
-pydantic
-azure-identity
+
+#### Drivers:
+[ODBC Driver for SQL Server](https://go.microsoft.com/fwlink/?linkid=2249006)
+
+Libraries:
+> pyodbc
+> fastapi
+> uvicorn[standard]
+> pydantic
+> azure-identity
 
 ###  Generating inputs:
 
@@ -22,3 +27,5 @@ For purpose of writing new data into SQL database permission, contact:
 > wojtasss99@gmail.com
 For read only:
 
+DataBase looks like this:
+![db](/assets/images/SmokeOutDB.png)
