@@ -14,6 +14,7 @@ and general mechanical engineer [Konrad Sejud](https://www.linkedin.com/in/konra
 
 Libraries:
 > pyodbc
+> pandas
 > fastapi
 > uvicorn[standard]
 > pydantic
