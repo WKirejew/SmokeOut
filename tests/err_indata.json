@@ -2,9 +2,9 @@
     "username": "Test_user",
     "operations": [
     {   "type": "switch",
-        "date": "22:10:12_25/10/2023"
+        "date": "22:10:1_25/10/2023"
     },
-    {   "type": "open",
+    {   "type": "ope",
         "date": "08:10:12_26/10/2023"
     },
     {   "type": "open",
@@ -19,7 +19,7 @@
     {   "type": "open",
         "date": "18:10:12_26/10/2023"
     },
-    {   "type": "open",
+    {   "type": "opn",
         "date": "22:10:12_26/10/2023"
     }
     ]
