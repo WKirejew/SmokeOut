@@ -13,12 +13,12 @@ and general mechanical engineer [Konrad Sejud](https://www.linkedin.com/in/konra
 [ODBC Driver for SQL Server](https://go.microsoft.com/fwlink/?linkid=2249006)
 
 Libraries:
-> pyodbc
-> pandas
-> fastapi
-> uvicorn[standard]
-> pydantic
-> azure-identity
+> pandas \
+> fastapi \
+> uvicorn[standard] \
+> pydantic \
+> azure-identity \
+> mysqlclient (for testing in mysql)
 
 ###  Generating inputs:
 
