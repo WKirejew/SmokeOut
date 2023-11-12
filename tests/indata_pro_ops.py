@@ -49,13 +49,18 @@ class InData:
         # Reading information from "date" string
          try:
              hour = int(date[0:2])
+             hour = '0' + str(hour) if hour < 10 else str(hour)
              minute = int(date[3:5])
+             minute = '0' + str(minute) if minute < 10 else str(minute)
              second = int(date[6:8])
+             second = '0' + str(second) if second < 10 else str(second)
              day = int(date[9:11])
+             day = '0' + str(day) if day < 10 else str(day)
              month = int(date[12:14])
+             month = '0' + str(month) if month < 10 else str(month)
              year = int(date[15:])
         # Constructing the string of SQL's DateTime2(0) format
-             dateSQL = str(year) + "-" + str(month) + "-" + str(day) + " " + str(hour) + ":" + str(minute) + ":" + str(second)
+             dateSQL = str(year) + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second
          except:
              print("Error occured: wrong datetime")
              raise SystemExit
