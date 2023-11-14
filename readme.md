@@ -18,7 +18,8 @@ Libraries:
 > uvicorn[standard] \
 > pydantic \
 > azure-identity \
-> mysqlclient (for testing in mysql)
+> mysqlclient (for testing in mysql) \
+> ipynb (to import files from notebooks)
 
 ###  Generating inputs:
 
