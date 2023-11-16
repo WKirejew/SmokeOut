@@ -3,7 +3,7 @@
 
 DAG that uploads data to Azure Blob Storage and sends an email when ran successfully.
 
-This DAG shows how to generate a task for every element in a list and uses the AzureBlobHook to perform the upload.
+This DAG uses the AzureBlobHook to perform the upload.
 """
 
 from airflow import DAG
@@ -11,7 +11,8 @@ from airflow.decorators import task
 from airflow.operators.dummy_operator import DummyOperator
 from airflow.operators.email_operator import EmailOperator
 from airflow.providers.microsoft.azure.hooks.wasb import WasbHook
-from airflow.utils.task_group import TaskGroup
+from custom.hooks import MovielensHook
+
 from datetime import datetime, timedelta
 import os
 import requests
