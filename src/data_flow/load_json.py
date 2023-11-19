@@ -8,10 +8,11 @@ This DAG uses the AzureBlobHook to perform the upload.
 
 from airflow import DAG
 from airflow.decorators import task
+from airflow.utils.task_group import TaskGroup
 from airflow.operators.dummy_operator import DummyOperator
+from airflow.operators.python import PythonOperator
 from airflow.operators.email_operator import EmailOperator
 from airflow.providers.microsoft.azure.hooks.wasb import WasbHook
-from custom.hooks import MovielensHook
 
 from datetime import datetime, timedelta
 import os
@@ -64,5 +65,23 @@ with DAG(
                 azurehook.load_string(string_data=res.text, container_name="covid-data", blob_name=filename)
 
             upload_to_azure_blob(endpoint=endpoint, date=date)
+
+    def _input_gen():
+        print("s")
+
+    input_gen = PythonOperator(
+        task_id = "function",
+        python_callable = _input_gen,
+        dag = dag
+    )
+
+    def _json_upload():
+        print("up")
+
+    json_upload = PythonOperator(
+        task_id = "function",
+        python_callable = _json_upload,
+        dag = dag
+    )
 
     t0 >> input_gen >> json_upload >> send_email
