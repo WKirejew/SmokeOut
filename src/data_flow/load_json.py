@@ -18,8 +18,6 @@ from datetime import datetime, timedelta
 import os
 import requests
 
-
-endpoints = ["ca", "co", "ny", "pa", "wa"]
 date = "{{ ds_nodash }}"
 email_to = ["wojtasss99@wp.pl"]
 

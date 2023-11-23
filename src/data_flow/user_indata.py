@@ -1,3 +1,14 @@
+"""
+### Process user input data (.json) downloaded from Azure Blob Storage
+
+DAG that downloads data from Azure Blob Storage - container `jsons` -
+- that stores unprocessed data from user mobile Apps.
+This processed datafiles then are moved to other container `historic-json`
+that are furthermore used as inputs for ML models
+
+This DAG uses the WasbHook to perform the processes on the cloud and
+MsSqlHook to perform SQL operations over database
+"""
 import datetime as dt
 
 import os
@@ -80,7 +91,7 @@ with TaskGroup("indata_files_processing_task_group") as processing_group:
 # -------------                 TASK 3               ---------------------
 # Next operation is to move processed datafiles into 
 # "historic_data" directory
-with TaskGroup("indata_files_processing_task_group") as move_files:
+with TaskGroup("files_moving_task_group") as move_files:
         for filename in filenames:
              
             @task(task_id="move_file_{0}".format(filename))
